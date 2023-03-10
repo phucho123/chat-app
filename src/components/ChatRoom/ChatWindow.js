@@ -92,6 +92,7 @@ const ChatWindow = () => {
       roomId: selectedRoom.id
     })
     form.resetFields(['message']);
+    setInputValue('');
   }
   return (
     <WrapperStyled>

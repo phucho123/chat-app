@@ -1,4 +1,4 @@
-import { Avatar, Button, Form, Input } from 'antd'
+import { Avatar, Button, Form, Input, Alert } from 'antd'
 import React from 'react'
 import styled from 'styled-components'
 import { UserAddOutlined } from '@ant-design/icons'
@@ -95,6 +95,8 @@ const ChatWindow = () => {
   }
   return (
     <WrapperStyled>
+      {selectedRoom.id ? (
+      <>
       <HeaderStyled>
         <div className='header__info'>
           <p className="header__title">{selectedRoom?.name}</p>
@@ -141,7 +143,17 @@ const ChatWindow = () => {
           </Button>
         </FormStyled>
       </ContentStyled>
+      </>) : (
+      <Alert
+        message='Hãy chọn phòng'
+        type='info'
+        showIcon
+        style={{ margin: 5 }}
+        closable
+      />
+    )}
     </WrapperStyled>
+    
   )
 }
 

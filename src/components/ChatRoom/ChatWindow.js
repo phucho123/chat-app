@@ -84,15 +84,17 @@ const ChatWindow = () => {
     setInputValue(e.target.value);
   }
   const handleOnSubmit = () => {
-    addDocument('messages',{
-      text: inputValue,
-      uid,
-      photoURL,
-      displayName,
-      roomId: selectedRoom.id
-    })
-    form.resetFields(['message']);
-    setInputValue('');
+    if(inputValue){
+      addDocument('messages',{
+        text: inputValue,
+        uid,
+        photoURL,
+        displayName,
+        roomId: selectedRoom.id
+      })
+      form.resetFields(['message']);
+      setInputValue('');
+    }
   }
   return (
     <WrapperStyled>

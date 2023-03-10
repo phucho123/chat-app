@@ -84,7 +84,6 @@ const ChatWindow = () => {
     setInputValue(e.target.value);
   }
   const handleOnSubmit = () => {
-    form.resetFields(['message']);
     addDocument('messages',{
       text: inputValue,
       uid,
@@ -92,6 +91,7 @@ const ChatWindow = () => {
       displayName,
       roomId: selectedRoom.id
     })
+    form.resetFields(['message']);
   }
   return (
     <WrapperStyled>
